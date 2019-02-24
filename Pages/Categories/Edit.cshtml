@@ -1,0 +1,14 @@
+﻿@page
+@model BookManager.Pages.Categories.EditModel
+@{
+    ViewData["Title"] = "Editing a category";
+    var id = Model.Category.Id;
+}
+
+<h3>Change Category Definition (Id = @id)</h3>
+<form method="post">
+    Text:<input id="msg" asp-for="Category.Name">
+    <button type="submit" asp-route-id="@id" class="button greenBk">Save</button>
+    <a asp-page="./Index" class="button redBk">Cancel</a>
+</form>
+

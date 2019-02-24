@@ -1,0 +1,17 @@
+﻿@page
+@model BookManager.Pages.Authors.EditModel
+@{
+    ViewData["Title"] = "Edit";
+    var id = Model.Author.Id;
+}
+
+<h3>Change Author Name (Id = @id)</h3>
+<form method="post">
+    Last Name:<input id="msg" asp-for="Author.LastName"><br />
+    First Name:<input id="msg" asp-for="Author.ForeName"><br />
+    E-Mail:<input id="msg" asp-for="Author.Email"><br />
+    <button type="submit" asp-route-id="@id" class="button greenBk">Save</button>
+    <a asp-page="./Index" class="button redBk">Cancel</a>
+</form>
+
+

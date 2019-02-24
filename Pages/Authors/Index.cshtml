@@ -1,0 +1,44 @@
+﻿@page
+@model BookManager.Pages.Authors.IndexModel
+@{
+    ViewData["Title"] = "Index";
+    var authors = Model.Authors;
+    var count = authors.Count;
+}
+
+
+<form method="post">
+    @if (count > 0)
+    {
+        <table>
+            <thead><tr><th>Author's Id</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Actions</th></tr></thead>
+            <tbody>
+                @foreach (var m in authors)
+                {
+                <tr>
+                    <td>@m.Id</td>
+                    <td>@m.ForeName</td>
+                    <td>@m.LastName</td>
+                    <td>@m.Email</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@m.Id" class="button greenBk">Edit</a>
+                        <button asp-page-handler="Delete" asp-route-id="@m.Id" type="submit" class="button redBk">Delete</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table><br>
+    }
+    New Message: <input id="msg" asp-for="Author.LastName" autofocus>
+    <button asp-page-handler="Add" type="submit" class="button greenBk">Add</button>
+    <br><br>
+    <div class="big green">@Model.Result</div><br><br>
+    @if (count > 0)
+    {
+        <button asp-page-handler="DeleteAll" type="submit" class="button redBk">Delete All</button>
+    }
+
+</form>
+
+
+
