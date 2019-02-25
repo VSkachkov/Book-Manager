@@ -37,3 +37,4 @@ C:\STUDY\MASTER\NET\Messages\BookManager\obj\Debug\netcoreapp2.2\Razor\Pages\Cat
 C:\STUDY\MASTER\NET\Messages\BookManager\obj\Debug\netcoreapp2.2\Razor\Pages\Categories\Delete.g.cshtml.cs
 C:\STUDY\MASTER\NET\Messages\BookManager\obj\Debug\netcoreapp2.2\Razor\Pages\Categories\Index.g.cshtml.cs
 C:\STUDY\MASTER\NET\Messages\BookManager\obj\Debug\netcoreapp2.2\Razor\Pages\_ViewStart.g.cshtml.cs
+C:\STUDY\MASTER\NET\Messages\BookManager\obj\Debug\netcoreapp2.2\Razor\Pages\Error.g.cshtml.cs

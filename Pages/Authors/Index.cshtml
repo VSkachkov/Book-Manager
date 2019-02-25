@@ -6,7 +6,9 @@
     var count = authors.Count;
 }
 
-
+<form asp-page="./Index" method="get">
+    <a asp-page="Create">Add new author</a>
+</form><br>
 <form method="post">
     @if (count > 0)
     {
@@ -15,23 +17,24 @@
             <tbody>
                 @foreach (var m in authors)
                 {
-                <tr>
-                    <td>@m.Id</td>
-                    <td>@m.ForeName</td>
-                    <td>@m.LastName</td>
-                    <td>@m.Email</td>
-                    <td>
-                        <a asp-page="./Edit" asp-route-id="@m.Id" class="button greenBk">Edit</a>
-                        <button asp-page-handler="Delete" asp-route-id="@m.Id" type="submit" class="button redBk">Delete</button>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>@m.Id</td>
+                        <td>@m.ForeName</td>
+                        <td>@m.LastName</td>
+                        <td>@m.Email</td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@m.Id" class="button greenBk">Edit</a>
+                            <button asp-page-handler="Delete" asp-route-id="@m.Id" type="submit" class="button redBk">Delete</button>
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table><br>
     }
-    New Message: <input id="msg" asp-for="Author.LastName" autofocus>
-    <button asp-page-handler="Add" type="submit" class="button greenBk">Add</button>
-    <br><br>
+
+    @*New Author: <input id="msg" asp-for="Author.LastName" autofocus>
+        <button asp-page-handler="Add" type="submit" class="button greenBk">Add</button>
+        <br><br>*@
     <div class="big green">@Model.Result</div><br><br>
     @if (count > 0)
     {

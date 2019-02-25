@@ -1,8 +1,17 @@
 ﻿@page
 @model BookManager.Pages.Authors.CreateModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
+    //var id = Model.Author.Id;
+    //var Author = Model.A
 }
 
 <h1>Create</h1>
-
+<h3>Adding new author to database</h3>
+<form method="post">
+        Last Name:<input id="msg" asp-for="Author.LastName"><br />
+        First Name:<input id="msg" asp-for="Author.ForeName"><br />
+        E-Mail:<input id="msg" asp-for="Author.Email"><br />
+        <button type="submit" class="button greenBk">Save</button>
+        <a asp-page="./Index" class="button redBk">Cancel</a>
+    </form>

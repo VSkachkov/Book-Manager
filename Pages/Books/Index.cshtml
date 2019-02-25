@@ -9,13 +9,15 @@
 
 <form asp-page="./Index" method="get">
     <a asp-page="Create">Add a book</a>
+    <input type="text" name="search" id="search" value="@Model.Filter" class="leftShift w6">
+    <input type="submit" value="Search Title" class="button greenBk w6">
 </form><br>
 <table class="table">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Author</th>
+            <th><a asp-page="./Index"  asp-route-filter="@Model.Filter" asp-route-sort="@Model.IdSort">Id</a></th>
+            <th><a asp-page="./Index"  asp-route-filter="@Model.Filter" asp-route-sort="@Model.TitleSort">Title</a></th>
+            <th><a asp-page="./Index" asp-route-filter="@Model.Filter" asp-route-sort="@Model.AuthorSort">Author</a></th>
             <th>Actions</th>
         </tr>
     </thead>
