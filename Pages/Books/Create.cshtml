@@ -1,8 +1,18 @@
 ﻿@page
 @model BookManager.Pages.Books.CreateModel
-@{
-    ViewData["Title"] = "Create";
-}
+@using (Html.BeginForm())
+    {
+        ViewData["Title"] = "Create";
+    }
 
 <h1>Create</h1>
-
+<h3>Adding new book to database</h3>
+<form method="post">
+    Title:<input id="msg" asp-for="Book.Title"><br />
+    <label asp-for="Book.CategoryId"></label>
+    <select asp-for="Book.CategoryId" asp-items="Model.CategoriesForFront"></select><br />
+    <label asp-for="Book.AuthorId"></label>
+    <select asp-for="Book.AuthorId" asp-items="Model.AuthorsForFront"></select><br />
+    <button type="submit" class="button greenBk">Save</button>
+    <a asp-page="./Index" class="button redBk">Cancel</a>
+</form>
